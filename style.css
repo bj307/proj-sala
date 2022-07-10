@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    background-color: rgba(0, 5, 26, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+
+p, a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.divBotao {
+    border: 1px solid;
+    padding: 50px 0px;
+    width: 200px;
+    display: inline-block;
+    background: linear-gradient(-4deg, #ee7752, #e73c7e, #23a6d5);
+}
+
+.aBotao {
+    font-size: 18px;
+}
+
+.divBotao:hover {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5);
+}
+
+.divMenuAtiv {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.disclaimer {
+    display: none;
+}
+
+.divImc {
+    width: 100%;
+    height: 89vh;
+    display: flex;
+    justify-content: center;
+}
+
+#calcBot {
+    display: flex;
+    position: unset;
+    background-color: #FFF;
+    align-items: center;
+    width: unset;
+}
+
+main {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.divAltura, .divPeso, .divBot {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#peso, #altura, #calcBot {
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+#calcBot:hover {
+    background-color: #2F4F4F;
+}
+
+.tabela{
+    display:none;
+}
+
+
+.imcText, .clasText, .protText, .gorText, .carboText, .minText, .maxText, .tituloTable {
+    
+    width: 220px;
+    height: 20px;
+    background-color: #FFF;
+    padding-top: 4px;
+    padding-bottom: 1px;
+    padding-left: 35px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+}

@@ -1,0 +1,200 @@
+@font-face {
+    font-family: 'ValorantFont';
+    src: url('fontes/Valorant Font.ttf') format('truetype'), url('fontes/Valorant-Font.otf') format('opentype');
+    }
+
+@font-face {
+    font-family: 'Candara';
+    src: url('fontes/candara-4.ttf') format('truetype'), url('fontes/candara-4.otf') format('opentype');
+}
+    
+h1 {
+        font-family: 'ValorantFont', Courier, monospace;
+    }
+
+body {
+    font-family: 'Candara', Courier, monospace;
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.div1 {
+    background-color: #D3D3D3;
+    margin-top: -20px;
+    min-height: 1024px;
+}
+
+figure {
+    margin: 0 auto;
+}
+
+iframe {
+    margin-top: -20px;
+    margin-left: 20px;
+    border: solid;
+}
+
+p {
+    margin-left: 20px;
+}
+
+.tabelaArsenal {
+    text-align: right;
+}
+
+p {
+    color: black;
+  }
+
+.textNegrito {
+    font-weight: bold;
+}
+
+.textColor {
+    color: red;
+}
+
+.textSize {
+    font-size: 25px;
+}
+
+.textSublinhado {
+    text-decoration: underline;
+}
+
+.textEspaço {
+    letter-spacing: 4px;
+}
+
+.textEspaço2 {
+    word-spacing: 6px;
+}
+
+.alturaLinha {
+    line-height: 30px;
+}
+
+.disclaimer {
+    display: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #B1B1B1;
+    color: blue;
+    font-weight: bold;
+    border-color: black;
+    transition: 1s;
+}
+
+#menuTopo {
+    background-color: #DCDCDC;
+}
+
+td:hover {
+    background-color: #A9A9A9;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+}
+
+.fade {
+    opacity:1;
+}
+
+.fade:hover {
+    opacity:0.7;
+}
+
+.grow:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.shrink:hover {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.imgborder:hover {
+    border: 10px solid;
+    color: black;
+}
+
+.quadro {
+    margin-left: 20px;
+}
+
+.bannerSlide {
+    height: 400px;
+    width: 1024px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: absolute;
+    top: 12%;
+}
+
+.navegar {
+    position: relative;
+    justify-content: center;
+    bottom: 20px;
+    margin: -5px auto;
+    text-align: center;   
+    display: flex;
+}
+
+.bar {
+    height: 13px;
+    width: 13px;
+    border: 2px solid grey;
+    border-radius: 70px;
+    margin: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bar:hover {
+    background-color: gray;
+}
+
+.slides input {
+    display: none;
+}
+
+.slides {
+    display: flex;
+    width: 400%;
+    height: 100%;
+}
+
+.imgSlide {
+    width: 25%;
+    transition: 0.4s;
+}
+.imgSlide img {
+    width: 100%;
+    height: 100%;
+}
+
+#slide1:checked ~ .s1 {
+    margin-left: 0;
+}
+
+#slide2:checked ~ .s1 {
+    margin-left: -25%;
+}
+
+#slide3:checked ~ .s1 {
+    margin-left: -50%;
+}
+
+#slide4:checked ~ .s1 {
+    margin-left: -75%;
+}

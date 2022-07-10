@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" lang="pt-br" />
+    <title>Banner Slide</title>
+    <link rel="shorcut icon" href="imagens/iconfab.jpg">
+</head>
+
+<body>
+
+    <header>
+        <center>
+            <h1>Banner Slide</h1>
+        </center>
+    </header>
+
+    <div class="div1">
+        <hr size="3" color="orange">
+        <center>
+            <nav>
+                <table id="menuTopo">
+                    <tr>
+                        <td><a href="index.html">&nbsp;Inicio&nbsp;</a></td>
+                        <td><a href="arsenal.html">&nbsp;Arsenal&nbsp;</a></td>
+                        <td><a href="contato.html">&nbsp;Contato&nbsp;</a></td>
+                        <td><a href="direitos.html">&nbsp;Direitos&nbsp;</a></td>
+                        <td><a href="github.html">&nbsp;GitHub&nbsp;</a></td>
+                        <td><a href="testes.html">&nbsp;Explicando CSS&nbsp;</a></td>
+                        <td><a href="css.html">&nbsp;Formulário&nbsp;</a></td>
+                        <td><a href="imagenscss.html">&nbsp;Imagens CSS&nbsp;</a></td>
+                        <td><a href="slidebanner.html">&nbsp;Banner Slide&nbsp;</a></td>
+                        <td><a href="../index.html">&nbsp;Voltar&nbsp;</a></td>
+                    </tr>
+                </table>
+            </nav>
+        </center>
+        <hr size="3" color="orange">
+
+    <div class="bannerSlide">
+        <div class="slides">
+            <input type="radio" name="slide" id="slide1" checked>
+            <input type="radio" name="slide" id="slide2">
+            <input type="radio" name="slide" id="slide3">
+            <input type="radio" name="slide" id="slide4">
+
+            <div class="imgSlide s1" >
+                <img src="imagens/banner1.png" alt="banner 1">
+            </div>
+            <div class="imgSlide">
+                <img src="imagens/banner2.png" alt="banner 2">
+            </div>
+            <div class="imgSlide">
+                <img src="imagens/banner3.png" alt="banner 3">
+            </div>
+            <div class="imgSlide">
+                <img src="imagens/banner4.png" alt="banner 4">
+            </div>
+        </div>
+
+        <div class="navegar">
+            <label class="bar" for="slide1"></label>
+            <label class="bar" for="slide2"></label>
+            <label class="bar" for="slide3"></label>
+            <label class="bar" for="slide4"></label>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

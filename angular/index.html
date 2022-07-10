@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <figure class="icon-cards mt-3">
+            <div class="icon-cards__content">
+                <div class="icon-cards__item d-flex align-items-center justify-content-center"><a
+                        href="https://www.youtube.com/playlist?list=PLrBwmJ9lj_L2ctlLlnqKSX1fDOKu3CgeN" target="_blank"><img
+                            style="border-radius: 6px; " src="playdev.png" alt="playlist-angular"></a>
+                </div>
+                <div class="icon-cards__item d-flex align-items-center justify-content-center"><a
+                        href="https://muscle-site-web.herokuapp.com/" target="_blank"><img
+                            style="border-radius: 6px; " src="v1.0.png" alt="playlist-angular"></a>
+                </div>
+                <div class="icon-cards__item d-flex align-items-center justify-content-center"><a
+                        href="https://bj-chefe.000webhostapp.com/atividades.html"><img
+                            style="border-radius: 6px; " src="back.png" alt="playlist-angular"></a>
+                </div>
+            </div>
+        </figure>
+
+        <div class="checkbox">
+            <input class="d-none" id="toggle-animation" type="checkbox" checked />
+            <label class="checkbox__checkbox" for="toggle-animation"></label>
+            <label class="checkbox__label" for="toggle-animation">Toggle animation</label>
+        </div>
+    </div>
+    <script>function classToggle() {
+            var el = document.querySelector('.icon-cards__content');
+            el.classList.toggle('step-animation');
+        }
+
+        document.querySelector('#toggle-animation').addEventListener('click', classToggle);</script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8" lang="pt-br" />
+        <title>Calculadora</title>
+        <link rel="shorcut icon" href="imagens/muscleicon.png">   
+        <script src="index.js"></script>   
+    </head>
+    <body>
+        
+        <my-menu></my-menu>
+
+        <div class="divImc">  
+            <main>
+                <h2>Calculadora IMC</h2>
+                <div class="divAltura">
+                    <label for="altura">Altura (M)</label>
+                    <input type="number" id="altura">
+                </div>
+                <div class="divPeso">
+                    <label for="peso">Peso (KG)</label>
+                    <input type="number" id="peso">
+                </div>
+                <div class="divBot">
+                    <button id="calcBot" onclick="calcIMC()">Calcular</button>
+                </div>
+                <span id="resultado"></span>
+                <div id="tabelaDieta" class="tabela">
+                    <div class="tituloTable"><strong>DETALHES DA ANÁLISE</strong></div>
+                    <div class="imcText">IMC: <span id="imc2"></span></div>
+                    <div class="clasText">Peso: <span id="classification2"></span></div>
+                    <div class="protText">Proteina: <span id="proteina2"></span></div>
+                    <div class="gorText">Gordura: <span id="gordura2"></span></div>
+                    <div class="carboText">Carboidrato: <span id="carboidrato2"></span></div>
+                    <div class="minText">Peso Min: <span id="pesoMin2"></span></div>
+                    <div class="maxText">Peso Max: <span id="pesoMax2"></span></div>
+                </div>
+
+            </main>
+        </div>  
+    <script src="script.js"></script>
+    </body>
+</html>
