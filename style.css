@@ -7,8 +7,9 @@ body {
 }
 
 #ptest {
-    margin-left: 180px;
-    margin-right: 180px;
+    margin-left: 200px;
+    margin-right: 200px;
+    text-align: justify;
 }
 
 p, a {
