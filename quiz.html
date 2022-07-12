@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="cssdoquiz.css">
+        <meta charset="UTF-8" lang="pt-br" />
+        <title>Benefícios</title>
+        <link rel="shorcut icon" href="imagens/muscleicon.png">
+        <script src="index.js"></script> 
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="csschk.css">
+    </head>
+    <body>
+        
+        <my-menu></my-menu>
+        <div class="wrapper">
+            <input type="checkbox" name="checkbox" class="switch" id="ChangeTheme" onclick="myfunction()">
+        </div>
+
+        <div class="start-screen">
+            <button id="start-button">Start</button>
+        </div>
+        <div id="wrapper">
+            <div id="display-container">
+                <div class="header">
+                    <div class="number-of-count">
+                        <span class="number-of-question"></span>
+                    </div>
+                    <div class="timer-div">
+                        <img src="https://svgshare.com/i/iRM.svg" />
+                        <span class="time-left"></span>
+                    </div>
+                </div>
+                <div id="container">
+                    <!-- Question and options are displayed here -->
+                </div>
+                <div class="btn-container">
+                    <button id="next-button">Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="score-container hide">
+            <div id="user-score"></div>
+            <button id="restart">Restart</button>
+        </div>
+
+        <script src="quiz.js"></script>
+    </body>
+</html>

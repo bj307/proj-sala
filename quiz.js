@@ -1,168 +1,174 @@
-(function() {
-  var questions = [{
-    question: "Questão 1",
-    choices: ["1", "2"]
-  }, {
-    question: "Questão 2",
-    choices: ["A", "B", "C"]
-  }];
-  
-  var questionCounter = 0; //segue numero de questões
-  var selections = []; //respostas do usuário Array
-  var quiz = $('#quiz'); //div da quiz
-  
-  //mostra questão inicial
-  displayNext();
-  
-  // Click handler para botão "proxima"
-  $('#next').on('click', function (e) {
-    e.preventDefault();
-    
-    // rava animações indevidas
-    if(quiz.is(':animated')) {        
-      return false;
-    }
-    choose();
-    
-    // protecão caso não ecolha nenhuma questão
-    if (isNaN(selections[questionCounter])) {
-      alert('Please make a selection!');
-    } else {
-      questionCounter++;
-      displayNext();
-    }
-  });
-  
-  // Click handler para o botão 'voltar'
-  $('#prev').on('click', function (e) {
-    e.preventDefault();
-    
-    if(quiz.is(':animated')) {
-      return false;
-    }
-    choose();
-    questionCounter--;
-    displayNext();
-  });
-  
-  // Click handler para o botão 'iniciar'
-  $('#start').on('click', function (e) {
-    e.preventDefault();
-    
-    if(quiz.is(':animated')) {
-      return false;
-    }
-    questionCounter = 0;
-    selections = [];
-    displayNext();
-    $('#start').hide();
-  });
-  
-  // animações de hover
-  $('.button').on('mouseenter', function () {
-    $(this).addClass('active');
-  });
-  $('.button').on('mouseleave', function () {
-    $(this).removeClass('active');
-  });
-  
-  // cria a div que contem a respostas
-  function createQuestionElement(index) {
-    var qElement = $('<div>', {
-      id: 'question'
-    });
-    
-    var header = $('<h2>Question ' + (index + 1) + ':</h2>');
-    qElement.append(header);
-    
-    var question = $('<p>').append(questions[index].question);
-    qElement.append(question);
-    
-    var radioButtons = createRadios(index);
-    qElement.append(radioButtons);
-    
-    return qElement;
-  }
-  
-  // cria a lista de respostas com radio buttons
-  function createRadios(index) {
-    var radioList = $('<ul>');
-    var item;
-    var input = '';
-    for (var i = 0; i < questions[index].choices.length; i++) {
-      item = $('<li>');
-      input = '<input type="radio" name="answer" value=' + i + ' />';
-      input += questions[index].choices[i];
-      item.append(input);
-      radioList.append(item);
-    }
-    return radioList;
-  }
-  
-  // pega o valor da resposta escolhida e coloca na array selections
-  function choose() {
-    selections[questionCounter] = +$('input[name="answer"]:checked').val();
-  }
-  
-  // busca e exibe o proximo elemento
-  function displayNext() {
-    quiz.fadeOut(function() {
-      $('#question').remove();
-      
-      if(questionCounter < questions.length){
-        var nextQuestion = createQuestionElement(questionCounter);
-        quiz.append(nextQuestion).fadeIn();
-        if (!(isNaN(selections[questionCounter]))) {
-          $('input[value='+selections[questionCounter]+']').prop('checked', true);
-        }
-        
-        // controles para o botão voltar aparecer após a primeira questão
-        if(questionCounter === 1){
-          $('#prev').show();
-        } else if(questionCounter === 0){
-          
-          $('#prev').hide();
-          $('#next').show();
-        }
-      }else {
-        var scoreElem = displayScore();
-        quiz.append(scoreElem).fadeIn();
-        $('#next').hide();
-        $('#prev').hide();
-        $('#start').show();
-      }
-    });
-  }
-  
-  // Analisa as resposta e retorna o resultado
-  function displayScore() {
-    var score = $('<p>',{id: 'question'});
-    var matchKit;
-    var selection = selections[0] +""+selections[1];
-      switch(selection) {
-    case "00":
-        matchKit = 'Resposta 1 e A';
-        break;
-    case "01":
-        matchKit = 'Resposta 1 e B';
-        break;    
-    case "02":
-        matchKit = 'Resposta 1 e C';
-        break;
-    case "10":
-        matchKit = 'Resposta 2 e A';
-        break;
-    case "11":
-        matchKit = 'Resposta 2 e B';
-        break;
-    case "12":
-        matchKit = 'Resposta 2 e C';
-        break;   
-    default:
-        matchKit = 'Sem resposta';
-  }
-    
-    score.append('O kit certo é o: ' + matchKit + ' !');
-    return score;
-  }
-})();
+const quizdisplay = document.getElementById("display");
+let timeLeft = document.querySelector(".time-left");
+let quizContainer = document.getElementById("container");
+let nextBtn = document.getElementById("next-button");
+let countOfQuestion = document.querySelector(".number-of-question");
+let wrapper = document.getElementById("wrapper");
+let displayContainer = document.getElementById("display-container");
+let scoreContainer = document.querySelector(".score-container");
+let restart = document.getElementById("restart");
+let userScore = document.getElementById("user-score");
+let startScreen = document.querySelector(".start-screen");
+let startButton = document.getElementById("start-button");
+let questionCount;
+let scoreCount = 0;
+let count = 11;
+let countdown;
+
+//Question and Options array
+// Add questions, options and correct option in below format
+const quizArray = [
+	{
+		id: "0",
+		question: "For every one person, there are 1.6 million ____",
+		options: ["Websites", "Grain Of Sands", "Ants", "Rodents"],
+		correct: "Ants"
+	},
+	{
+		id: "1",
+		question: "Which is the only continent in the world without a desert?",
+		options: ["North America", "Asia", "Africa", "Europe"],
+		correct: "Europe"
+	},
+	{
+		id: "2",
+		question: " Who invented Computer?",
+		options: ["Charles Babbage", "Henry Luce", "Henry Babbage", "Charles Luce"],
+		correct: "Charles Babbage"
+	}
+];
+// restart game
+restart.addEventListener("click", () => {
+	inital(); //call initial function
+	wrapper.classList.remove("hide");
+	scoreContainer.classList.add("hide");
+});
+// Next button
+nextBtn.addEventListener(
+	"click",
+	(displayNext = () => {
+		//increment questionCount
+		questionCount += 1;
+		//if last question
+		if (questionCount == quizArray.length) {
+			//hide question container and display score
+			wrapper.classList.add("hide");
+			scoreContainer.classList.remove("hide");
+			// user score
+			userScore.innerHTML =
+				"Your score is " + scoreCount + " out of " + questionCount;
+		} else {
+			//display questionCount
+			countOfQuestion.innerHTML =
+				questionCount + 1 + " of " + quizArray.length + " Question";
+			//display Quiz
+			quizDisplay(questionCount);
+			//count=11 (so that it starts with 10)
+			count = 11;
+			//clear interval for next question
+			clearInterval(countdown);
+			//display timer (start countdown)
+			timerDisplay();
+		}
+	})
+);
+// Timer
+const timerDisplay = () => {
+	countdown = setInterval(() => {
+		count--;
+		timeLeft.innerHTML = `${count}s`;
+		if (count == 0) {
+			//when countdown reaches 0 clearInterval and go to next question
+			clearInterval(countdown);
+			displayNext();
+		}
+	}, 1000);
+};
+//display quiz
+const quizDisplay = (questionCount) => {
+	let quizCards = document.querySelectorAll(".container_mid");
+	//hide other cards
+	quizCards.forEach((card) => {
+		card.classList.add("hide");
+	});
+	//display current question card
+	quizCards[questionCount].classList.remove("hide");
+};
+// Quiz creation
+function quizCreator() {
+	//randomly sort questions
+	quizArray.sort(() => Math.random() - 0.5);
+	//generate quiz
+	for (let i of quizArray) {
+		//randomly sort options
+		i.options.sort(() => Math.random() - 0.5);
+		//quiz card creation
+		let div = document.createElement("div");
+		div.classList.add("container_mid", "hide");
+		//question number
+		countOfQuestion.innerHTML = 1 + " of " + quizArray.length + " Question";
+		//question
+		let question_DIV = document.createElement("p");
+		question_DIV.classList.add("question");
+		question_DIV.innerHTML = i.question;
+		div.appendChild(question_DIV);
+		//options
+		div.innerHTML += `
+<button class="option-div" onclick="checker(this)">${i.options[0]}</button>
+<button class="option-div" onclick="checker(this)">${i.options[1]}</button>
+<button class="option-div" onclick="checker(this)">${i.options[2]}</button>
+<button class="option-div" onclick="checker(this)">${i.options[3]}</button>
+
+`;
+		quizContainer.appendChild(div);
+	}
+}
+// Check option is correct or not
+function checker(userOption) {
+	let userSolution = userOption.innerText;
+	let question = document.getElementsByClassName("container_mid")[questionCount];
+	let options = question.querySelectorAll(".option-div");
+	//if user's clicked anaswer==correct option stored in object
+	if (userSolution === quizArray[questionCount].correct) {
+		//green background and score increment
+		userOption.classList.add("correct");
+		scoreCount++;
+	} else {
+		//red background
+		userOption.classList.add("inCorrect");
+		//for marking green(correct)
+		options.forEach((element) => {
+			if (element.innerText == quizArray[questionCount].correct) {
+				element.classList.add("correct");
+			}
+		});
+	}
+	//clear interval(stop timer)
+	clearInterval(countdown);
+	//disabled all options
+	options.forEach((element) => {
+		element.disabled = true;
+	});
+}
+//initial setup
+function inital() {
+	quizContainer.innerHTML = "";
+	questionCount = 0;
+	scoreCount = 0;
+	clearInterval(countdown);
+	count = 11;
+	timerDisplay();
+	quizCreator();
+	quizDisplay(questionCount);
+}
+// when user click on start button
+startButton.addEventListener("click", () => {
+	startScreen.classList.add("hide");
+	wrapper.classList.remove("hide");
+	inital();
+});
+//hide quiz and display start screen
+window.onload = () => {
+	startScreen.classList.remove("hide");
+	wrapper.classList.add("hide");
+};

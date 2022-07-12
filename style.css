@@ -1,9 +1,11 @@
 body {
     margin: 0;
-    background: #C6FFDD;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
     background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
     height: 100vh;
+}
+
+.dark {
+    background: radial-gradient(circle, rgba(15,84,98,1) 0%, rgba(159,151,210,1) 0%, rgba(5,94,112,1) 100%);
 }
 
 #ptest {
@@ -205,3 +207,5 @@ main {
 #slide4:checked ~ .s1 {
     margin-left: -75%;
 }
+
+

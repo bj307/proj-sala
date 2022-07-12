@@ -91,3 +91,11 @@ function nextImage(){
     }
     document.getElementById("slide"+timerSlide).checked = true;
 }
+
+
+// alterar background
+
+function myfunction() {
+    const element = document.body;
+    element.classList.toggle("dark");
+}
