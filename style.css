@@ -136,6 +136,10 @@ main {
         width: auto;
         height: 300px;
     }
+    #ptest {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
 
 .bannerSlide {
