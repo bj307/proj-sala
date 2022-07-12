@@ -6,6 +6,10 @@ body {
     height: 100vh;
 }
 
+#ptest {
+    margin-left: 120px;
+    margin-right: 120px;
+}
 
 p, a {
     color: #FFF;
