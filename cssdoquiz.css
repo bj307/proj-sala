@@ -139,6 +139,7 @@ i.fab {
         font-size: 2.4rem;
     }
     #wrapper {
+		margin-top: 70px;
         transform: unset;
         left: unset;
         max-width: unset;

@@ -20,21 +20,39 @@ let countdown;
 const quizArray = [
 	{
 		id: "0",
-		question: "For every one person, there are 1.6 million ____",
-		options: ["Websites", "Grain Of Sands", "Ants", "Rodents"],
-		correct: "Ants"
+		question: "Quantas gramas de creatina se deve tomar por dia?",
+		options: ["5g", "15g", "1g", "150g"],
+		correct: "5g"
 	},
 	{
 		id: "1",
-		question: "Which is the only continent in the world without a desert?",
-		options: ["North America", "Asia", "Africa", "Europe"],
-		correct: "Europe"
+		question: "Qual o elemento principal para formação de musculo?",
+		options: ["Proteina", "Gordura", "Sódio", "Fibra"],
+		correct: "Proteina"
 	},
 	{
 		id: "2",
-		question: " Who invented Computer?",
-		options: ["Charles Babbage", "Henry Luce", "Henry Babbage", "Charles Luce"],
-		correct: "Charles Babbage"
+		question: "Qual malefício é causado pelo uso da creatina?",
+		options: ["Nenhum", "Pedra nos rins", "Problema de coração", "Problemas respiratórios"],
+		correct: "Nenhum"
+	},
+	{
+		id: "3",
+		question: "Whey é uma proteina derivada de?",
+		options: ["Leite", "Ovos", "Carne", "Vegetais"],
+		correct: "Leite"
+	},
+	{
+		id: "4",
+		question: "Qual suplemento pode ser usado como alternativa para whey?",
+		options: ["Albumina", "BCAA", "Hipercalóricos", "Creatina"],
+		correct: "Albumina"
+	},
+	{
+		id: "5",
+		question: "Qual a função de um termogenico?",
+		options: ["Acelerar o metabolismo proporcionando mais energia", "Aumentar vitaminas no sangue", "Ajudar no aumento de peso e massa muscular", "Acelerar a recuperação pós treino"],
+		correct: "Acelerar o metabolismo proporcionando mais energia"
 	}
 ];
 // restart game
@@ -60,7 +78,7 @@ nextBtn.addEventListener(
 		} else {
 			//display questionCount
 			countOfQuestion.innerHTML =
-				questionCount + 1 + " of " + quizArray.length + " Question";
+				questionCount + 1 + " of " + quizArray.length + " questões";
 			//display Quiz
 			quizDisplay(questionCount);
 			//count=11 (so that it starts with 10)
@@ -106,7 +124,7 @@ function quizCreator() {
 		let div = document.createElement("div");
 		div.classList.add("container_mid", "hide");
 		//question number
-		countOfQuestion.innerHTML = 1 + " of " + quizArray.length + " Question";
+		countOfQuestion.innerHTML = 1 + " de " + quizArray.length + " questões";
 		//question
 		let question_DIV = document.createElement("p");
 		question_DIV.classList.add("question");
