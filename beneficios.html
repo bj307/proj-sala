@@ -12,38 +12,19 @@
         
         <my-menu></my-menu>
 
-        <main class="tela-principal">
-
-            <section class='conteudos'>
-    
-                <h1 id:"titlequiz">Quiz</h1>
-    
-                <article class='centro' id='instrucoes'>
-                    Leia a questão e clique na resposta correta
-                </article>
-    
-                <article class='questoes'>
-                    
-                    <header class='questao'>
-                        <span id='numQuestao'></span>
-                        <h2 id='pergunta'></h2>
-                    </header>
-    
-                    <div class='corpo'>
-                        <ol type='A' id='alternativas'>
-                            <li id='a' value='1A' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
-                            <li id='b' value='1B' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
-                            <li id='c' value='1C' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
-                        </ol>
-                    </div>
-                </article>
-                
-                <article id='aviso'>Questão <span id='numero'></span> de <span id='total'></span></article>
-                
-            </section>
-    
-            <footer class='centro'>Desenvolvido por Edson Maia &copy; 2021</footer>
-        </main>
+        <div id='container'>
+			<div id='title'>
+				<h1>Quiz Simples Teste
+			</div>
+   			<br/>
+  			<div id='quiz'></div>
+    		<div class='button' id='next'><a href='#'>Próxima</a></div>
+    		<div class='button' id='prev'><a href='#'>Voltar</a></div>
+    		<div class='button' id='start'> <a href='#'>Iniciar</a></div>
+    		<!-- <button class='' id='next'>Próxima</a></button>
+    		<button class='' id='prev'>Voltar</a></button>
+    		<button class='' id='start'>Iniciar</a></button> -->
+    	</div>
 
         <script src="quiz.js"></script>
     </body>
