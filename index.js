@@ -122,11 +122,11 @@ class MyComp extends HTMLElement {
                 </a>
               </li>
               
-              <li><a id="item-menu" href="index.html">Inicio</a></li>
-              <li><a id="item-menu" href="suplementos.html">Suplementos</a></li>
-              <li><a id="item-menu" href="quiz.html">Quiz</a></li>
-              <li><a id="item-menu" href="calculadora.html">Calculadora</a></li>
-              <li class="menu-item"><a id="item-menu" href="atividades.html">Atividades</a></li>
+              <li><a id="item-menu" href="index">Inicio</a></li>
+              <li><a id="item-menu" href="suplementos">Suplementos</a></li>
+              <li><a id="item-menu" href="quiz">Quiz</a></li>
+              <li><a id="item-menu" href="calculadora">Calculadora</a></li>
+              <li class="menu-item"><a id="item-menu" href="atividades">Atividades</a></li>
             </ul>
 
           </nav>
